@@ -1,0 +1,5 @@
+.env
+users.json
+browser_profile/
+__pycache__/
+venv/

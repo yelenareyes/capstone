@@ -1,13 +1,86 @@
 [
   {
-    "id": 1,
-    "title": "Business Analyst Intern",
-    "company": "Hawaiian Electric",
+    "title": "Summer Intern - Financial Reporting & Compliance",
+    "company": "Hawaiian Electric Company",
+    "island": "Unknown",
+    "major": "Finance",
+    "season": "Summer",
+    "paid": true,
+    "deadline": "2026-12-04",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/11866945?searchId=dff06e52-514b-44f4-a096-0ae85fa82caa",
+    "id": 1
+  },
+  {
+    "title": "Northwestern Mutual - Honolulu",
+    "company": "Financial Services",
+    "island": "Oahu",
+    "major": "Finance",
+    "season": "Summer",
+    "paid": true,
+    "deadline": "2026-12-16",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/11984411",
+    "id": 2
+  },
+  {
+    "title": "Northwestern Mutual - Honolulu",
+    "company": "Financial Services",
+    "island": "Oahu",
+    "major": "Finance",
+    "season": "Summer",
+    "paid": true,
+    "deadline": "2026-12-19",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/12017103",
+    "id": 3
+  },
+  {
+    "title": "KMH LLP",
+    "company": "Accounting",
     "island": "Oahu",
     "major": "MIS",
     "season": "Summer",
-    "paid": "Yes",
-    "deadline": "2026-12-15",
-    "url": "https://app.joinhandshake.com/..."
+    "paid": true,
+    "deadline": "2026-12-04",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/10742264",
+    "id": 4
+  },
+  {
+    "title": "Watts Water Technologies",
+    "company": "Manufacturing",
+    "island": "Unknown",
+    "major": "MIS",
+    "season": "Summer",
+    "paid": true,
+    "deadline": "2026-12-23",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/11491345",
+    "id": 5
+  },
+  {
+    "title": "Edward Jones",
+    "company": "Investment / Portfolio Management",
+    "island": "Unknown",
+    "major": "Finance",
+    "season": "Unknown",
+    "paid": true,
+    "deadline": "2027-11-14",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/11661800",
+    "id": 6
+  },
+  {
+    "title": "Garden Island Federal Credit Union",
+    "company": "Financial Services",
+    "island": "Unknown",
+    "major": "MIS",
+    "season": "Unknown",
+    "paid": true,
+    "deadline": "2026-12-31",
+    "source": "Handshake",
+    "url": "https://app.joinhandshake.com/jobs/11088818",
+    "id": 7
   }
 ]
