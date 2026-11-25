@@ -1,0 +1,386 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7fa;
+    color: #202b3c;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: #155e75;
+}
+
+.site-header {
+    /* Flexbox lines up the title and navigation and lets them wrap on smaller screens. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem max(1.25rem, calc((100% - 1120px) / 2));
+    background: #123b5d;
+    color: #fff;
+}
+
+.site-title {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    text-decoration: underline;
+}
+
+main {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.page-intro {
+    padding: 2rem 0 1rem;
+}
+
+.page-intro h1 {
+    margin: 0.2rem 0;
+    color: #123b5d;
+    /* clamp adjusts the heading size between small and large screens. */
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.page-intro p {
+    margin: 0.4rem 0;
+}
+
+.eyebrow {
+    color: #526579;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.filter-panel,
+.internship-card,
+.empty-state {
+    border: 1px solid #d9e1e8;
+    border-radius: 0.6rem;
+    background: #fff;
+}
+
+.filter-panel {
+    padding: 1.25rem;
+}
+
+.filter-panel h2,
+.results-section h2 {
+    margin-top: 0;
+}
+
+.filter-form {
+    /* Grid wraps filter controls into columns that fit the available space. */
+    display: grid;
+    /* auto-fit/minmax let the number of columns adjust to the screen width. */
+    grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: bold;
+}
+
+.form-field select {
+    width: 100%;
+    min-height: 2.6rem;
+    padding: 0.45rem;
+    border: 1px solid #aebdca;
+    border-radius: 0.3rem;
+    background: #fff;
+    color: #202b3c;
+    font: inherit;
+}
+
+.checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox-field input {
+    width: 1rem;
+    height: 1rem;
+}
+
+.filter-actions,
+.card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+button,
+.button {
+    display: inline-block;
+    padding: 0.6rem 0.9rem;
+    border: 1px solid #155e75;
+    border-radius: 0.35rem;
+    background: #155e75;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    text-decoration: none;
+}
+
+button:hover,
+.button:hover {
+    background: #10495b;
+}
+
+.clear-link,
+.text-link {
+    font-weight: bold;
+}
+
+.results-section {
+    padding: 2rem 0;
+}
+
+.results-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.results-heading h2,
+.results-heading p {
+    margin-bottom: 0.2rem;
+}
+
+.deadline-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: #526579;
+    font-size: 0.9rem;
+}
+
+.deadline-key span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.key-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+}
+
+.key-dot.urgent {
+    background: #c83d42;
+}
+
+.key-dot.upcoming {
+    background: #d29a16;
+}
+
+.key-dot.later {
+    background: #36825b;
+}
+
+.key-dot.passed {
+    background: #7a8793;
+}
+
+.internship-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.internship-card {
+    padding: 1.25rem;
+    border-left: 0.35rem solid #36825b;
+}
+
+.internship-card.urgent {
+    border-left-color: #c83d42;
+}
+
+.internship-card.upcoming {
+    border-left-color: #d29a16;
+}
+
+.internship-card.passed {
+    border-left-color: #7a8793;
+}
+
+.card-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card-heading h3,
+.card-company,
+.card-details,
+.deadline-date {
+    margin: 0;
+}
+
+.card-company {
+    color: #526579;
+    font-size: 0.9rem;
+}
+
+.card-heading h3 {
+    margin-top: 0.2rem;
+    color: #123b5d;
+}
+
+.deadline-badge {
+    flex-shrink: 0;
+    padding: 0.25rem 0.55rem;
+    border-radius: 1rem;
+    background: #e4f2e9;
+    color: #246641;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.deadline-badge.urgent {
+    background: #fbe7e7;
+    color: #9c252b;
+}
+
+.deadline-badge.upcoming {
+    background: #fff3d4;
+    color: #805c0b;
+}
+
+.deadline-badge.passed {
+    background: #e9edf0;
+    color: #52606b;
+}
+
+.card-details {
+    margin: 0.8rem 0 0.4rem;
+    color: #526579;
+}
+
+.card-actions {
+    margin-top: 1rem;
+}
+
+.card-actions form {
+    margin: 0;
+}
+
+.button-secondary {
+    background: #fff;
+    color: #155e75;
+}
+
+.button-secondary:hover {
+    background: #edf5f7;
+}
+
+.button-light {
+    border-color: #aebdca;
+    background: #fff;
+    color: #202b3c;
+}
+
+.button-light:hover {
+    background: #f0f3f5;
+}
+
+.empty-state {
+    margin-top: 1rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.auth-panel {
+    width: min(460px, 100%);
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #d9e1e8;
+    border-radius: 0.6rem;
+    background: #fff;
+}
+
+.auth-panel h1 {
+    margin-top: 0;
+    color: #123b5d;
+}
+
+.auth-form {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.auth-form label {
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+.auth-form input {
+    width: 100%;
+    min-height: 2.6rem;
+    padding: 0.45rem;
+    border: 1px solid #aebdca;
+    border-radius: 0.3rem;
+    font: inherit;
+}
+
+.saved-email {
+    margin-top: 1rem;
+}
+
+.messages {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 1rem auto 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e6c45b;
+    border-radius: 0.4rem;
+    background: #fff7da;
+}
+
+.messages p {
+    margin: 0.4rem 0;
+}
+
+@media (max-width: 600px) {
+    /* Stack the header items when the screen is narrow. */
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .card-heading {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Child templates can replace these blocks with their own page title. -->
+    <title>{% block title %}Hawaii Internship Tracker{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="site-title" href="{{ url_for('home') }}">Hawaii Internship Tracker</a>
+        <!-- Flask supplies these account values so the correct links appear. -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="{{ url_for('home') }}">Internships</a>
+            {% if logged_in %}
+                <a href="{{ url_for('cart_page') }}">My list ({{ cart|length }})</a>
+                <a href="{{ url_for('likes_page') }}">Liked ({{ likes|length }})</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Log in</a>
+                <a href="{{ url_for('register') }}">Create account</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <!-- Messages from Flask forms, such as a login error, appear here. -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

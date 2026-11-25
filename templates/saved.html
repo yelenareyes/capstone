@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }} | Hawaii Internship Tracker{% endblock %}
+
+{% block content %}
+<section class="page-intro">
+    <p class="eyebrow">Your saved opportunities</p>
+    <h1>{{ title }}</h1>
+</section>
+
+{% if items %}
+    <div class="internship-list">
+        <!-- Flask supplies saved internship records; Jinja makes one card for each. -->
+        {% for internship in items %}
+            <article class="internship-card {{ internship.status }}">
+                <div class="card-heading">
+                    <div>
+                        <p class="card-company">{{ internship.company }}</p>
+                        <h2>{{ internship.title }}</h2>
+                    </div>
+                    <span class="deadline-badge {{ internship.status }}">
+                        Apply by {{ internship.deadline_pretty }}
+                    </span>
+                </div>
+
+                <p class="card-details">
+                    {{ internship.major }} · {{ internship.season }} · {{ internship.island }}
+                </p>
+
+                <div class="card-actions">
+                    <a class="button button-secondary" href="{{ internship.url }}"
+                       target="_blank" rel="noopener noreferrer">View internship</a>
+                    {% if title == "Your cart" %}
+                        <form method="post"
+                              action="{{ url_for('remove_from_cart', internship_id=internship.id) }}">
+                            <button class="button button-light" type="submit">Remove from my list</button>
+                        </form>
+                    {% else %}
+                        <form method="post" action="{{ url_for('like', internship_id=internship.id) }}">
+                            <button class="button button-light" type="submit">Unlike</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+
+    {% if mailto %}
+        <p class="saved-email">
+            <a class="button" href="{{ mailto }}">Email my internship list</a>
+        </p>
+    {% endif %}
+{% else %}
+    <section class="empty-state">
+        <p>{{ empty_text }}</p>
+        <a class="button" href="{{ url_for('home') }}">Browse internships</a>
+    </section>
+{% endif %}
+{% endblock %}
